@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Block Over Window</title>
+  <style>
+    /* Styling for the overlay block */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      z-index: 9999;
+    }
+
+    /* Styling for the content within the overlay */
+    #overlay-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Element that, when clicked, will display the overlay block -->
+<button onclick="showOverlay()">Show Overlay</button>
+
+<!-- The overlay block -->
+<div id="overlay">
+  <div id="overlay-content">
+    <p>This is some text in the overlay block.</p>
+    <button onclick="hideOverlay()">Close</button>
+  </div>
+</div>
+
+<script>
+  // Function to display the overlay block
+  function showOverlay() {
+    document.getElementById("overlay").style.display = "flex";
+  }
+
+  // Function to hide the overlay block
+  function hideOverlay() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
